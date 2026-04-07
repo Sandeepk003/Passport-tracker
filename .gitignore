@@ -1,0 +1,13 @@
+# Node
+node_modules/
+dist/
+.env
+
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# Database and media (don't upload testing data)
+passports.db
+backend/uploads/
