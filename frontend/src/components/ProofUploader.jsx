@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import axios from 'axios';
 
-const API_BASE = 'http://localhost:5000/api';
+const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
 
 export default function ProofUploader({ label, value, onChange }) {
   const [uploading, setUploading] = useState(false);
@@ -61,7 +61,7 @@ export default function ProofUploader({ label, value, onChange }) {
       {value && value.startsWith('/api/uploads/') && (
         <div style={{ marginTop: '0.5rem' }}>
           <img 
-            src={`http://localhost:5000${value}`} 
+            src={`${API_BASE.replace('/api', '')}${value}`} 
             alt="Proof Thumbnail" 
             style={{ width: '100px', height: '100px', objectFit: 'cover', borderRadius: '8px', border: '1px solid var(--border)' }} 
           />

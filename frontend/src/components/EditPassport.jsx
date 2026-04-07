@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
 import ProofUploader from './ProofUploader';
 
-const API_BASE = 'http://localhost:5000/api';
+const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
 const STATUSES = ['Received', 'Submitted to AVA', 'Collected from AVA', 'In Transit', 'Out for Delivery', 'Delivered'];
 
 function EditPassport() {
